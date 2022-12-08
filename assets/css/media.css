@@ -1,0 +1,219 @@
+@media screen and (min-width: 1200px) {
+    .navbar-expand-xl .navbar-collapse {
+        margin-left: auto
+    }
+}
+
+@media screen and (max-width:1279px) {
+    body {
+        -webkit-text-size-adjust: none;
+    }
+    input, textarea, button, select {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+    }
+    input[type="radio"] {
+        appearance: radio;
+        -moz-appearance: radio;
+        -webkit-appearance: radio;
+    }
+    input[type="checkbox"] {
+        appearance: checkbox;
+        -moz-appearance: checkbox;
+        -webkit-appearance: checkbox;
+    }
+    select {
+        background-image: url(https://res.cloudinary.com/motorsafety/image/upload/v2-motorsafety/assets/images/select-arr);
+        background-repeat: no-repeat;
+        background-position: right center;
+    }
+}
+
+@media (min-width: 768px) {
+    #garage-tabs .nav-tabs {
+        display: flex;
+    }
+    #garage-tabs .card {
+        border: none;
+    }
+    #garage-tabs .card .card-header {
+        display: none;
+    }
+    #garage-tabs .card .collapse {
+        display: block !important;
+        padding-top: 58px;
+    }
+}
+
+@media screen and (min-width:768px) {
+    #vehicle-info.collapse {
+        display: block!important
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1199px) {
+    .latest-news-section h4.card-title {
+        font-size: 20px
+    }
+    .latest-news-section .date {
+        font-size: 14px
+    }
+    .fix-map-cnt {
+        width: 50%;
+        top: 227px;
+    }
+    .recall-list-wrap {
+        width: 45%
+    }
+    .current-recall-cnt {
+        padding-top: 20px
+    }
+    .current-item-details {
+        min-height: auto;
+    }
+}
+
+@media screen and (max-width:991px) {
+    /*-body { background: green; }*/
+    body {
+        padding-bottom: 0;
+    }
+    #footer {
+        position: inherit;
+    }
+    li.nav-item a:after {
+        bottom: 0
+    }
+    .latest-news-section {
+        padding-top: 28px
+    }
+    .ad-block {
+        height: auto;
+        padding: 30px;
+    }
+    .ad-block img {
+        max-width: 100%
+    }
+    .item-status {
+        flex-wrap: wrap;
+    }
+    .item-part-status, .item-repair-status {
+        width: 100%;
+        margin-bottom: 15px
+    }
+    .map-overlay p {
+        max-width: 80%
+    }
+}
+
+@media (max-width: 767px) {
+    #garage-tabs .tab-content>.tab-pane {
+        display: block !important;
+        opacity: 1;
+        margin: 0 0 15px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .header .navbar {
+        min-height: auto;
+    }
+    .recall-news-banner {
+        margin-top: 0px
+    }
+    .banner-text {
+        margin: 15px 0 0 0
+    }
+    .recall-service-cnt .text {
+        margin: 0 0 15px;
+        padding-top: 0
+    }
+    .recall-service-cnt {
+        padding-top: 30px
+    }
+    /*.service-form .form-inline {*/
+    /*    flex-flow: column;*/
+    /*}*/
+    /*.service-form .form-inline .equal-cnt {*/
+    /*    width: 100%;*/
+    /*    margin-bottom: 30px*/
+    /*}*/
+    .service-form .btn {
+        text-align: center;
+    }
+    .footerlink {
+        margin-bottom: 25px;
+        padding: 0;
+    }
+    p.address {
+        margin-bottom: 25px
+    }
+    #footer {
+        padding: 40px 0;
+    }
+    .copyright-row {
+        border: none;
+        margin: 0;
+        padding: 20px 0
+    }
+    .copyright-row .social-links {
+        border-bottom: 1px solid #E7E7E7;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .copyright-row .social-links a {
+        margin: 0 20px 0 0
+    }
+    .recall-list-wrap {
+        width: 100%
+    }
+    .current-recall-cnt {
+        min-height: auto;
+        top: 60px;
+        border-bottom: 1px solid #ccc
+    }
+    /*body { background: yellow; }*/
+    .navbar-brand img {
+        max-width: 200px
+    }
+    .active-view {
+        padding: 10px
+    }
+    #middle {
+        padding-top: 60px
+    }
+    .current-item-details {
+        flex-wrap: wrap;
+    }
+    ul.recall-list li h6 span em {
+        display: block;
+        margin: 0;
+    }
+    #recall-search-result h4 {
+        font-size: 20px
+    }
+    .alert-cnt {
+        left: 140px
+    }
+    .owl-theme .owl-nav {
+        right: 0;
+        top: -56px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    /*body { background: orange; }*/
+}
+
+@media screen and (max-width:320px) {
+    .h-desc {
+        max-width: 150px
+    }
+    .history-actions ul li:before {
+        left: 99px;
+    }
+    .record-form .form-control {
+        min-width: 150px
+    }
+}

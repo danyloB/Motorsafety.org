@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "lambda",
+			"path": "../lambda"
+		}
+	],
+	"settings": {},
+	"launch": {
+		"configurations": [
+			{
+				"type": "aws-sam",
+				"request": "direct-invoke",
+				"name": "lambda:lambda_function.lambda_handler (python3.6)",
+				"invokeTarget": {
+					"target": "code",
+					"projectRoot": "serverlessrepo-UrlCrawler-fnPyUrlCrawl-14XO0QX0SD7X7",
+					"lambdaHandler": "lambda_function.lambda_handler"
+				},
+				"lambda": {
+					"runtime": "python3.6",
+					"payload": {},
+					"environmentVariables": {}
+				}
+			}
+		]
+	}
+}

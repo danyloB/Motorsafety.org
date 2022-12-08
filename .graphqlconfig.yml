@@ -1,0 +1,16 @@
+projects:
+  v2motorsafetyorgamplify:
+    schemaPath: graphql/schema.json
+    includes:
+      - graphql/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: graphql
+        region: us-west-2
+extensions:
+  amplify:
+    version: 3

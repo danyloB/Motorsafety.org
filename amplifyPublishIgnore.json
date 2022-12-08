@@ -1,0 +1,8 @@
+[
+    ".amplify",
+    ".git",
+    "deploy.sh",
+    "dynamodbImport/*.csv",
+    ".DS_Store",
+    ".vscode"
+]

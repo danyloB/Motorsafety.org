@@ -1,0 +1,37 @@
+#set( $indexPath = "/dealer/doc/_search" )
+#set( $distance = $util.defaultIfNull($ctx.args.mi, 20) )
+{
+    "version": "2017-02-28",
+    "operation": "GET",
+    "path": "$indexPath.toLowerCase()",
+    "params": {
+        "body": {
+        	#if( $context.args.nextToken )"search_after": [$util.toJson($context.args.nextToken)], #end
+          	#if( $context.args.from )"from": $context.args.from, #end
+          	"size": #if( $context.args.limit ) $context.args.limit #else 100 #end,
+            "query": {
+                "bool" : {
+                    "must": [
+                     {
+                        "query_string" : {"default_field" : "brand", "query" : "*${context.args.make}*"}
+                     }
+              		],
+                     "should": [
+                        #if( $context.args.location )
+                        {
+                            "geo_distance": {
+                                "distance": "${distance}mi",
+                                "location": "${context.args.location}"
+                            }
+                        },
+                        #end
+                        {
+                            "term": { "zip": "${context.args.zip}" }
+                        }
+                     ],
+                     "minimum_should_match" : 1
+                }
+            }
+        }
+    }
+}

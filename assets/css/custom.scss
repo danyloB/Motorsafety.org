@@ -1,0 +1,237 @@
+.form-select-filter {
+  height: 48px;
+  border-radius: 4px;
+
+  .vs__dropdown-toggle {
+    height: 100%;
+    border: 1px solid #E7E7E7;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+}
+
+.recall-form-filter {
+  height: 60px;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 4px;
+
+  .vs__dropdown-toggle {
+    height: 100%;
+    padding: 0 5px;
+  }
+
+  .recall-form-input {
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+
+  .vs__selected {
+    position: absolute;
+    height: 100%;
+  }
+}
+
+.user-dropdown {
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  .nav-link {
+    padding: 0;
+  }
+
+  max-width: 170px;
+}
+
+.cld-form-image > img {
+  max-width: 100%;
+}
+
+.cld-image.summary-type-img img {
+  height: 120px;
+}
+
+@media screen and (max-width: 767px) {
+  .vin-zip-search-input {
+    display: none !important;
+  }
+}
+
+.main-body-term {
+  padding-top: 20px;
+
+  .term-title {
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    text-align: center;
+  }
+
+  .content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+
+    ul {
+      list-style: none;
+    }
+
+    ul.ul-term {
+      & > li {
+        margin-top: 30px;
+
+        & > ul {
+          li {
+            text-indent: 40px;
+          }
+        }
+      }
+
+      ol {
+        counter-reset: alpha;
+
+        & > li {
+          list-style: none;
+          position: relative;
+          padding-top: 5px;
+        }
+
+        & > li:before {
+          counter-increment: alpha;
+          content: "(" counter(alpha, lower-alpha) ") ";
+          padding-right: 20px;
+        }
+      }
+    }
+
+    ul.ul-term.privacy {
+      & > li > ul > li {
+        padding-left: 40px;
+        text-indent: 0;
+      }
+    }
+  }
+}
+
+.cld-video-ctn {
+  margin: auto;
+}
+.cld-video-ctn video {
+  width: 100%;
+  max-height: 600px;
+}
+
+.recall-news-page-title {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  .recall-news-page-title {
+    margin-top: 0;
+  }
+}
+
+.recall-news-author-info {
+  margin-top: 20px;
+  text-align: center;
+
+  .author-avatar {
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+
+.rrc-thumb {
+  img {
+    width: 53px;
+    height: 53px;
+  }
+}
+
+
+.claim-form-filter {
+  height: 48px;
+  font-size: 1rem;
+  background: #fff;
+  border-radius: 4px;
+
+  .vs__dropdown-toggle {
+    height: 100%;
+    padding: 0 5px;
+  }
+
+  .recall-form-input {
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+
+  .vs__selected {
+    position: absolute;
+    height: 100%;
+  }
+}
+
+.dealer-marker-info {
+  display: flex;
+  .dealer-brand {
+    width: 50px;
+    height: 50px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .dealer-name {
+    flex: 1;
+    padding-right: 1rem;
+
+    &>div>span {
+      display: inline-block;
+      width: 55px;
+      font-weight: 600;
+    }
+  }
+}
+
+.link-btn {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.recall-item-img {
+  img {
+    width: 100%;
+  }
+}
+
+.article-tags {
+  margin-top: 20px;
+
+  .post-tag {
+    font-size: 95%;
+  }
+}
+
+.remote-description {
+  h2 {
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+
+  p + h2 {
+    margin-top: 25px;
+  }
+
+  ul,
+  ol {
+    list-style-position: inside;
+  }
+}

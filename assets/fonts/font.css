@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'maison_neuelight';
+  src: url('maisonneue-light-webfont.woff2') format('woff2'),
+  url('maisonneue-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: 'maison_neuebook';
+  src: url('maisonneue-regular-webfont.woff2') format('woff2'),
+  url('maisonneue-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: 'maison_neuemedium';
+  src: url('maisonneue-medium-webfont.woff2') format('woff2'),
+  url('maisonneue-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: 'maison_neuedemibold';
+  src: url('maisonneue-demi-webfont.woff2') format('woff2'),
+  url('maisonneue-demi-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: 'maison_neuebold';
+  src: url('maisonneue-bold-webfont.woff2') format('woff2'),
+  url('maisonneue-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: 'maison_neueblack';
+  src: url('maisonneue-black-webfont.woff2') format('woff2'),
+  url('maisonneue-black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

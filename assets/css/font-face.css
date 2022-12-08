@@ -1,0 +1,160 @@
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('../fonts/MaisonNeue-Black.eot');
+  src: url('../fonts/MaisonNeue-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/MaisonNeue-Black.woff2') format('woff2'), url('../fonts/MaisonNeue-Black.woff') format('woff'), url('../fonts/MaisonNeue-Black.ttf') format('truetype'), url('../fonts/MaisonNeue-Black.svg#MaisonNeue-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('../fonts/MaisonNeue-Bold.eot');
+  src: url('../fonts/MaisonNeue-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/MaisonNeue-Bold.woff2') format('woff2'), url('../fonts/MaisonNeue-Bold.woff') format('woff'), url('../fonts/MaisonNeue-Bold.ttf') format('truetype'), url('../fonts/MaisonNeue-Bold.svg#MaisonNeue-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('../fonts/MaisonNeue-DemiBold.eot');
+  src: url('../fonts/MaisonNeue-DemiBold.eot?#iefix') format('embedded-opentype'), url('../fonts/MaisonNeue-DemiBold.woff2') format('woff2'), url('../fonts/MaisonNeue-DemiBold.woff') format('woff'), url('../fonts/MaisonNeue-DemiBold.ttf') format('truetype'), url('../fonts/MaisonNeue-DemiBold.svg#MaisonNeue-DemiBold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('../fonts/MaisonNeue-Medium.eot');
+  src: url('../fonts/MaisonNeue-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/MaisonNeue-Medium.woff2') format('woff2'), url('../fonts/MaisonNeue-Medium.woff') format('woff'), url('../fonts/MaisonNeue-Medium.ttf') format('truetype'), url('../fonts/MaisonNeue-Medium.svg#MaisonNeue-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('../fonts/MaisonNeue-Light.eot');
+  src: url('../fonts/MaisonNeue-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/MaisonNeue-Light.woff2') format('woff2'), url('../fonts/MaisonNeue-Light.woff') format('woff'), url('../fonts/MaisonNeue-Light.ttf') format('truetype'), url('../fonts/MaisonNeue-Light.svg#MaisonNeue-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('../fonts/MaisonNeue-Book.eot');
+  src: url('../fonts/MaisonNeue-Book.eot?#iefix') format('embedded-opentype'), url('../fonts/MaisonNeue-Book.woff2') format('woff2'), url('../fonts/MaisonNeue-Book.woff') format('woff'), url('../fonts/MaisonNeue-Book.ttf') format('truetype'), url('../fonts/MaisonNeue-Book.svg#MaisonNeue-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Roboto'), local('Roboto-Regular'),
+  url('../fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+  font-display: swap;
+}
+
+/* Icomoon font face css */
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?qgig8n');
+  src: url('../fonts/icomoon.eot?qgig8n#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?qgig8n') format('truetype'), url('../fonts/icomoon.woff?qgig8n') format('woff'), url('../fonts/icomoon.svg?qgig8n#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-camera:before {
+  content: "\e90d";
+}
+
+.icon-error:before {
+  content: "\e90e";
+  color: #cd4c4c;
+}
+
+.icon-Group:before {
+  content: "\e909";
+  color: #fff;
+}
+
+.icon-steering-wheel:before {
+  content: "\e90a";
+  color: #fff;
+}
+
+.icon-motor:before {
+  content: "\e90b";
+  color: #fff;
+}
+
+.icon-brake-disk:before {
+  content: "\e90c";
+  color: #fff;
+}
+
+.icon-map-pin:before {
+  content: "\e907";
+  color: #7abf64;
+}
+
+.icon-calendar:before {
+  content: "\e908";
+  color: #00b6f2;
+}
+
+.icon-alert:before {
+  content: "\e906";
+}
+
+.icon-settings:before {
+  content: "\e905";
+  color: #395f2d;
+}
+
+.icon-web:before {
+  content: "\e900";
+}
+
+.icon-clock:before {
+  content: "\e901";
+}
+
+.icon-email:before {
+  content: "\e902";
+}
+
+.icon-location:before {
+  content: "\e903";
+}
+
+.icon-phone:before {
+  content: "\e904";
+}

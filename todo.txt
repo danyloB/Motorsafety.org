@@ -1,0 +1,21 @@
+- 6 hour deployment time
+- Also if you look through the previous commits you should be able to find some
+- features that were started in a new Branch but never completed like twilio integration and a directory of all recalls from nhtsa
+- There was also an admin page that was created so we would be able to moderate the listings and change requests from dealers.
+
+
+ISSUES
+- invalid tag/category url freezes page
+- slider heights aren't dynamic so it gets over page elements
+- left sidebar needs to be fixed
+
+QUESTIONS
+- do we have any design guidelines to follow about how to build/organize/design the UI?
+
+Organize templates and optimize api usages:
+- dealers/*
+- type/*
+
+- optimize generator to only generate pages for single post, category, tag and authors
+- create new pages only when new posts are added to json db
+- create a stats file with details about last import to compare with new changes and generate accordingly

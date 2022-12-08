@@ -1,0 +1,23 @@
+{
+  "name": "dynamodbimport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "flatRcl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@acuris/aws-es-connection": "^1.1.1",
+    "@elastic/elasticsearch": "^6.2.0",
+    "async": "^3.2.0",
+    "aws-amplify": "^3.3.2",
+    "aws-appsync": "^4.0.2",
+    "aws-sdk": "^2.710.0",
+    "csv-parse": "^4.10.1",
+    "graphql-tag": "^2.11.0",
+    "uuid": "^8.2.0",
+    "xlsx": "^0.16.8"
+  }
+}

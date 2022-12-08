@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "storage": {
+      "Appointment:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

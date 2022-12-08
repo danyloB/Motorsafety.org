@@ -1,0 +1,236 @@
+type ContactUs @model(timestamps: null) @auth(rules: [{allow: public, provider: iam, operations: [read, update]}]) @aws_iam {
+  id: String! @primaryKey(sortKeyFields: ["createdAt"])
+  createdAt: AWSDateTime!
+  department: String
+  email: String
+  message: String
+  name: String
+}
+
+type Dealer @model(timestamps: null) @searchable @auth(rules: [{allow: public, provider: iam, operations: [read, update]}]) @aws_iam {
+  address: String
+  location: String
+  brand: String
+  city: String
+  city_slug: String
+  city_state_slug: String
+  crm_id: Int
+  google_place_id: String
+  google_place_url: String
+  id: Int! @primaryKey
+  is_trusted: String
+  latitude: Float
+  longitude: Float
+  name: String
+  phone_number_main: String
+  phone_number_service: String
+  service_hours: String
+  slug: String
+  state: String
+  state_slug: String
+  utc_offset: Int
+  website: String
+  zip: Int
+}
+
+type Model @model(timestamps: null) @auth(rules: [{allow: public, provider: iam, operations: [read, update]}]) @aws_iam {
+  make: String! @primaryKey(sortKeyFields: ["year"])
+  models: [String]
+  year: Int!
+}
+
+type MyGarageItem {
+  createdAt: AWSDateTime
+  make: String
+  model: String
+  vin: String
+  year: String
+}
+
+type MyGarage @model(timestamps: null) @auth(rules: [{allow: private, provider: iam}]) @aws_iam {
+  data: [MyGarageItem]
+  username: String! @primaryKey
+}
+
+type DealerClaimRequest @model(timestamps: null) @searchable @aws_iam {
+  address: String
+  brand: String
+  city: String
+  city_slug: String
+  city_state_slug: String
+  created_at: AWSDateTime
+  crm_id: Int
+  dealer_id: String!
+  email: String!
+  google_place_id: String
+  google_place_url: String
+  id: String! @primaryKey
+  is_trusted: String
+  latitude: Float
+  longitude: Float
+  name: String
+  phone_number_main: String
+  phone_number_service: String
+  service_hours: String
+  slug: String
+  state: String
+  state_slug: String
+  status: Int
+  utc_offset: Int
+  website: String
+  zip: Int
+}
+
+type Appointment @model(timestamps: null) @auth(rules: [{allow: public, provider: iam, operations: [read, update]}]) @aws_iam {
+  createdAt: AWSDateTime
+  dealer_id: String
+  dealership: String
+  email: String
+  id: String! @primaryKey
+  make: String
+  message: String
+  model: String
+  name: String
+  phone_number: String
+  vin: String
+  year: String
+  zip: String
+}
+
+type SubscribeItem @aws_iam {
+  createdAt: AWSDateTime
+  make: String
+  model: String
+  type: String
+  vin: String
+  year: String
+}
+
+type Subscribe @model(timestamps: null ) @aws_iam {
+  data: [SubscribeItem]
+  email: String! @primaryKey
+}
+
+type VinRecallResult @aws_iam {
+  api_request_id: String
+  customer: VinCustommer
+  error_description: String
+  id: Int
+  internal_record_id: String
+  last_updated: String
+  make: String
+  model_name: String
+  model_year: String
+  recall_count: Int
+  recalls: [VinRecall]
+  status: String
+  use_type: String
+  user: Int
+  user_description: String
+  vin: String
+}
+
+type VinCustommer @aws_iam {
+  address: String
+  city: String
+  customer: String
+  email: String
+  first_name: String
+  last_name: String
+  locator: String
+  phone: String
+  state: String
+  zipcode: String
+  zipcode_extra: String
+}
+
+type VinRecall @aws_iam {
+  are_parts_available: Boolean
+  campaign_type: String
+  child: AWSJSON
+  description: String
+  dont_drive: Boolean
+  effective_date: String
+  expiration_date: Float
+  forbidden_reason: String
+  government_id: String
+  is_forbidden: Boolean
+  is_preinspection_required: Boolean
+  is_remedy_available: Boolean
+  is_reviewed: Boolean
+  labor_difficulty: Int
+  labor_max: String
+  labor_min: String
+  name: String
+  nhtsa_id: String
+  oem_id: String
+  overall_rank: Int
+  parts_available_date: Float
+  profit_rank: Int
+  recall_age: Int
+  recall_id: Int
+  recall_last_updated: String
+  remedy: String
+  risk: String
+  risk_rank: Int
+  risk_type: String
+  stop_sale: Boolean
+}
+
+type NhtsaRecallConnection @aws_iam {
+  Count: Int
+  Message: String
+  Results: [NhtsaRecall]
+}
+
+type NhtsaRecall @aws_iam {
+  Component: String
+  Conequence: String
+  Make: String
+  Manufacturer: String
+  Model: String
+  ModelYear: String
+  NHTSACampaignNumber: String
+  Notes: String
+  Remedy: String
+  ReportReceivedDate: String
+  Summary: String
+}
+
+input NhtsaRecallInput {
+  make: String!
+  model: String!
+  year: String!
+}
+
+input CreateAppointmentInput {
+  createdAt: Float
+  dealer_id: String
+  dealership: String
+  email: String
+  id: String!
+  make: String
+  message: String
+  model: String
+  name: String
+  phone_number: String
+  vin: String
+  year: String
+  zip: String
+}
+
+type DealerConnection @aws_iam {
+  items: [Dealer]
+  total: Int
+  nextToken: String
+}
+
+type Query @aws_iam {
+  listVinRecalls(vin: String!): VinRecallResult @function(name: "RecallMasterApiCall-${env}") @auth(rules: [{allow: public, provider: iam}]) @aws_iam
+  listNhtsaRecalls(query: NhtsaRecallInput!): NhtsaRecallConnection @function(name: "GetNhtsaRecalls-${env}") @auth(rules: [{allow: public, provider: iam}]) @aws_iam
+  searchByDistance(mi: Int, location: String!, zip: String!, make: String!, nextToken: String, from: Int, limit: Int): DealerConnection
+}
+
+type Mutation @aws_iam {
+  saveAppointment(input: CreateAppointmentInput!): Appointment @function(name: "SaveAppointment-${env}") @auth(rules: [{allow: public, provider: iam}]) @aws_iam
+}

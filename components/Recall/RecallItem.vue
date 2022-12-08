@@ -84,8 +84,8 @@
   </div>
 </template>
 <script>
-import api from '@/utils/requests'
 import gpl from 'graphql-tag'
+import api from '@/utils/requests'
 import recallItem from '@/utils/mixins/recallItem'
 import * as mutations from '@/graphql/mutations'
 import * as queries from '@/graphql/queries'
@@ -178,7 +178,7 @@ export default {
             email: this.email
           }
         })
-        // console.log(subscribers)
+        console.log(subscribers)
         if ((subscribers.data.getSubscribe) && ('data' in subscribers.data.getV2MotorsafetySubscribe)) {
           const subscriberData = subscribers.data.getSubscribe.data
           if (subscriberData) {

@@ -15,8 +15,10 @@ const findRouteMatch = (route) => {
   let match
   if (generator.schema) {
     for (const entry of generator.schema) {
-      if ((entry.regex && entry.pattern.test(route)) ||
-        (!entry.regex && entry.pattern === route)) {
+      if (
+        (entry.regex && entry.pattern.test(route)) ||
+        (!entry.regex && entry.pattern === route)
+      ) {
         match = entry
         break
       }
@@ -96,7 +98,9 @@ export const resolveRoutes = async (callback) => {
           zipDone.push(dealer.zip)
           repo.addRoute(`/zip/${dealer.zip}/`)
         }
-        repo.addRoute(`/dealers/${dealer.city_state_slug}/${dealer.dealerSlug}/`)
+        repo.addRoute(
+          `/dealers/${dealer.city_state_slug}/${dealer.dealerSlug}/`
+        )
       }
 
       for (const mk of makes) {
@@ -161,7 +165,12 @@ export default function () {
 
     routesDone++
     if (routesDone > routesLength) {
-      console.log('⧗ Generated %d/%d (+%d) routes', routesDone, routesLength, routesDone - routesLength)
+      console.log(
+        '⧗ Generated %d/%d (+%d) routes',
+        routesDone,
+        routesLength,
+        routesDone - routesLength
+      )
     } else {
       console.log('⧗ Generated %d/%d routes', routesDone, routesLength)
     }
@@ -182,8 +191,10 @@ export default function () {
       await generator.markDone()
       await generator.done()
 
-      console.log('Generator stats: %d unchanged, %d generated',
-        cacheStats.unchanged, cacheStats.generated
+      console.log(
+        'Generator stats: %d unchanged, %d generated',
+        cacheStats.unchanged,
+        cacheStats.generated
       )
     }
   })

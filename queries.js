@@ -440,13 +440,6 @@ export const listMyGarages = /* GraphQL */ `
       sortDirection: $sortDirection
     ) {
       items {
-        data {
-          createdAt
-          make
-          model
-          vin
-          year
-        }
         username
       }
       nextToken
@@ -616,14 +609,6 @@ export const listSubscribes = /* GraphQL */ `
       sortDirection: $sortDirection
     ) {
       items {
-        data {
-          createdAt
-          make
-          model
-          type
-          vin
-          year
-        }
         email
       }
       nextToken

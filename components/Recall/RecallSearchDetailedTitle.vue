@@ -148,7 +148,7 @@
 import gpl from 'graphql-tag'
 import * as mutations from '@/graphql/mutations'
 import * as queries from '@/graphql/queries'
-const apiKey = process.env.FUEL_API_KEY
+const apiKey = 'daefd14b-9f2b-4968-9e4d-9d4bb4af01d1'
 
 export default {
   name: 'RecallSearchDetailedTitle',
@@ -193,6 +193,7 @@ export default {
     async submitNotification () {
       try {
         const { vin, make, model, year } = this.summary
+        console.log('Summary================>', this.summary)
         let action = mutations.createSubscribe
         const newData = {
           createdAt: new Date(),
@@ -202,7 +203,7 @@ export default {
           vin: (vin) || '',
           year
         }
-        let data = [newData]
+        const data = [newData]
         const subscribers = await this.$appsyncClient.query({
           query: gpl(queries.getSubscribe),
           variables: {
@@ -213,14 +214,14 @@ export default {
         if ((subscribers.data.getSubscribe) && ('data' in subscribers.data.getSubscribe)) {
           const subscriberData = subscribers.data.getSubscribe.data
           if (subscriberData) {
-            data = subscriberData.map(item => ({
-              createdAt: item.createdAt,
-              make: item.make,
-              model: item.model,
-              type: (item.type) ? item.type : '',
-              vin: (item.vin) ? item.vin : '',
-              year: item.year
-            }))
+            // data = subscriberData.map(item => ({
+            //   createdAt: item.createdAt,
+            //   make: item.make,
+            //   model: item.model,
+            //   type: (item.type) ? item.type : '',
+            //   vin: (item.vin) ? item.vin : '',
+            //   year: item.year
+            // }))
             data.push(newData)
             action = mutations.updateSubscribe
           }

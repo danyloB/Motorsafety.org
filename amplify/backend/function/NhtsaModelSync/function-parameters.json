@@ -1,13 +1,3 @@
 {
-  "permissions": {
-    "storage": {
-      "Model:@model(appsync)": [
-        "create",
-        "read",
-        "update",
-        "delete"
-      ]
-    }
-  },
   "lambdaLayers": []
 }

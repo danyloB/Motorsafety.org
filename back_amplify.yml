@@ -1,0 +1,60 @@
+# version: 1
+# backend:
+#   phases:
+#     preBuild:
+#       commands:
+#         - cat ~/.aws/credentials
+#         - cat ~/.aws/config
+#         - sed -i "/aws_access_key_id/c\aws_access_key_id=AKIAWYBOEYTZWD3GHNXH" ~/.aws/credentials
+#         - sed -i "/aws_secret_access_key/c\aws_secret_access_key=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" ~/.aws/credentials
+#         - sed -i "/aws_session_token/d" ~/.aws/credentials
+#         # - aws sts get-session-token --duration-seconds=5400 > credentials.json
+#         # - sed -i "/aws_access_key_id/c\aws_access_key_id=`cat credentials.json | jq -r .'Credentials.AccessKeyId'`" ~/.aws/credentials
+#         # - sed -i "/aws_secret_access_key/c\aws_secret_access_key=`cat credentials.json | jq -r .'Credentials.SecretAccessKey'`" ~/.aws/credentials
+#         # - sed -i "/aws_session_token/c\aws_session_token=`cat credentials.json | jq -r .'Credentials.SessionToken'`" ~/.aws/credentials
+#         # - date -d "`cat credentials.json | jq -r .'Credentials.Expiration'`"
+#         - cat ~/.aws/credentials
+#     build:
+#       commands:
+#         - amplifyPush --simple
+#         - cat aws-exports.js
+#         - amplify version
+#         - exit
+#         # - git config --global user.email "segun.o@turing.com"
+#         # - git config --global user.name "Segun Ojo"
+#         # - git add .
+#         # - git commit --allow-empty -m 'Updated env files'
+#         # - git push origin HEAD:dev
+#         # - export BASE_DIRECTORY=`pwd`
+#         # - cd dynamodbImport && yarn && node dealers-csv.js
+#         # - cd dynamodbImport && yarn && gunzip nhtsa_vehicle_recalls.csv.gz && node flatRcl.js
+#         # - cd $BASE_DIRECTORY
+#         # - exit
+# frontend:
+#   phases:
+#     preBuild:
+#       commands:
+#         - npm ci
+#     build:
+#       commands:
+#         - mkdir -p logs
+#         - mkdir -p dist
+#         - ls -al
+#         # - npm run generate 2>&1 | tee logs/output-`date +%Y.%m.%d.%H.%M`.log
+#         # - echo "{\"version\":\"`date +%Y.%m.%d.%H.%M`\"}" > dist/version.json
+#         # - cat dist/version.json
+#         # - ls -al logs
+#         # - aws --no-cli-pager s3 sync dist s3://v2motorsafetyorg-amplify-20210221152118-hostingbucket-dev --delete
+#         # - aws --no-cli-pager cloudfront create-invalidation --distribution-id E37X5GKG4A1NSQ --paths "/*"
+#         # - bash deploy.sh 2>&1 | tee logs/output-`date +%Y.%m.%d.%H.%M`.log
+#         # - amplify publish --yes 2>&1 | tee logs/output-`date +%Y.%m.%d.%H.%M`.log
+#   artifacts:
+#     # IMPORTANT - Please verify your build output directory
+#     baseDirectory: dist
+#     files:
+#       - '**/*'
+#   cache:
+#     paths:
+#       - node_modules/**/*
+#       - dist/**/*
+#       - logs

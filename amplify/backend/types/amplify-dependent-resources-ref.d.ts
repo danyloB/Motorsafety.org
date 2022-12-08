@@ -1,67 +1,37 @@
 export type AmplifyDependentResourcesAttributes = {
+    "auth": {
+        "userPoolGroups": {
+            "usersGroupRole": "string"
+        },
+        "motorsafetybdb75347bdb75347": {
+            "IdentityPoolId": "string",
+            "IdentityPoolName": "string",
+            "UserPoolId": "string",
+            "UserPoolArn": "string",
+            "UserPoolName": "string",
+            "AppClientIDWeb": "string",
+            "AppClientID": "string"
+        }
+    },
     "api": {
-        "v2motorsafetyorgamplify": {
+        "motorsafety": {
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }
     },
     "function": {
-        "GetNhtsaRecalls": {
-            "Name": "string",
-            "Arn": "string",
-            "Region": "string",
-            "LambdaExecutionRole": "string"
-        },
-        "RecallMasterApiCall": {
-            "Name": "string",
-            "Arn": "string",
-            "Region": "string",
-            "LambdaExecutionRole": "string"
-        },
-        "SaveAppointment": {
-            "Name": "string",
-            "Arn": "string",
-            "Region": "string",
-            "LambdaExecutionRole": "string"
-        },
-        "NhtsaModelSync": {
+        "nhtsaModelSync": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
             "LambdaExecutionRole": "string",
             "CloudWatchEventRule": "string"
         },
-        "V2MotorsafetyAuthPreSignup": {
+        "motorSafetyPreSignup": {
             "Name": "string",
             "Arn": "string",
-            "LambdaExecutionRole": "string",
-            "Region": "string"
-        }
-    },
-    "auth": {
-        "userPoolGroups": {
-            "AdminGroupRole": "string"
-        },
-        "V2MotorsafetyAuth": {
-            "IdentityPoolId": "string",
-            "IdentityPoolName": "string",
-            "UserPoolId": "string",
-            "UserPoolName": "string",
-            "AppClientIDWeb": "string",
-            "AppClientID": "string",
-            "AppClientSecret": "string"
-        }
-    },
-    "hosting": {
-        "S3AndCloudFront": {
             "Region": "string",
-            "HostingBucketName": "string",
-            "WebsiteURL": "string",
-            "S3BucketSecureURL": "string",
-            "CloudFrontDistributionID": "string",
-            "CloudFrontDomainName": "string",
-            "CloudFrontSecureURL": "string",
-            "CloudFrontOriginAccessIdentity": "string"
+            "LambdaExecutionRole": "string"
         }
     }
 }

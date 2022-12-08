@@ -5,6 +5,7 @@ import { copyDist } from './writer'
 
 export default class Generator {
   constructor () {
+    console.log('initialized object of generator')
     this._busy = 0
     this._ensured = false
     this._stamp = new Date().getTime()
@@ -31,7 +32,7 @@ export default class Generator {
 
     mkdirsSync(this.outputPath)
     this.lokiDB = new Loki(this.dbPath)
-
+    console.log(this.lokiDB)
     this.statRow = null
     this.statExists = false
   }

@@ -1,5 +1,4 @@
 // import routes from './utils/staticRoutes/generatedRoutes'
-import awsmobile from './aws-exports.js'
 import { resolveRoutes } from './modules/content.js'
 
 const modifyHtml = (html) => {
@@ -8,40 +7,85 @@ const modifyHtml = (html) => {
   // Remove every script tag from generated HTML
   // html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
   // Add AMP script before </head>
-  const ampScript = '<script async src="https://cdn.ampproject.org/v0.js"></script>'
+  const ampScript =
+    '<script async src="https://cdn.ampproject.org/v0.js"></script>'
   html = html.replace('</head>', ampScript + '</head>')
   return html
 }
 
 export default {
   /*
-  ** Nuxt rendering mode
-  ** See https://nuxtjs.org/api/configuration-mode
-  */
+   ** Nuxt rendering mode
+   ** See https://nuxtjs.org/api/configuration-mode
+   */
+  // ssr: false,
+  dev: true,
+  devtools: true,
   target: 'static',
+
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true
+    }
+  },
+
   /*
-  ** Headers of the page
-  ** See https://nuxtjs.org/api/configuration-head
-  */
+   ** Headers of the page
+   ** See https://nuxtjs.org/api/configuration-head
+   */
   head: {
     title: 'MotorSafety.org',
     meta: [
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Protecting Drivers Everywhere' },
-      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'MotorSafety.org' },
-      { hid: 'og:title', name: 'og:title', content: 'MotorSafety.org' },
-      { hid: 'og:site_name', name: 'og:site_name', content: 'MotorSafety.org' },
-      { hid: 'og:description', name: 'og:description', content: 'Protecting Drivers Everywhere' }
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Protecting Drivers Everywhere'
+      },
+      {
+        hid: 'apple-mobile-web-app-title',
+        name: 'apple-mobile-web-app-title',
+        content: 'MotorSafety.org'
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'MotorSafety.org'
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: 'MotorSafety.org'
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Protecting Drivers Everywhere'
+      }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preconnect', href: 'https://www.motorsafety.org' },
-      { rel: 'preconnect', href: 'https://cognito-identity.us-west-2.amazonaws.com' }
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://www.motorsafety.org'
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://cognito-identity.us-west-2.amazonaws.com'
+      }
     ]
   },
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: [
     '@/assets/css/app.scss',
     'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css',
@@ -50,12 +94,18 @@ export default {
     'vue-select/dist/vue-select.css'
   ],
   /*
-  ** Plugins to load before mounting the App
-  ** https://nuxtjs.org/guide/plugins
-  */
+   ** Plugins to load before mounting the App
+   ** https://nuxtjs.org/guide/plugins
+   */
   plugins: [
-    { src: '@/plugins/client', mode: 'client' },
-    { src: '@/plugins/amplify.js', mode: 'client' },
+    {
+      src: '@/plugins/client',
+      mode: 'client'
+    },
+    {
+      src: '@/plugins/amplify.js',
+      mode: 'client'
+    },
     { src: '@/plugins/appsync.js' },
     '@/plugins/maps',
     '@/plugins/components',
@@ -65,8 +115,8 @@ export default {
     'plugins/preview.client.js'
   ],
   /*
-  ** Nuxt.js dev-modules
-  */
+   ** Nuxt.js dev-modules
+   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
@@ -74,8 +124,8 @@ export default {
     '@/modules/content'
   ],
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
@@ -102,15 +152,17 @@ export default {
     // bootstrapCSS: false, // Or `css: false`
     // bootstrapVueCSS: false // Or `bvCSS: false`
   },
+
+  middleware: [],
   /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
   axios: {},
   /*
-  ** Build configuration
-  ** See https://nuxtjs.org/api/configuration-build/
-  */
+   ** Build configuration
+   ** See https://nuxtjs.org/api/configuration-build/
+   */
   build: {
     extend (config, { isDev }) {
       if (isDev) {
@@ -120,18 +172,20 @@ export default {
         bufferutil: 'commonjs bufferutil',
         'utf-8-validate': 'commonjs utf-8-validate'
       }
-    }//,
+    } //,
     // babel: { compact: true }
   },
   /*
-    ** Apollo configuration
-    */
+   ** Apollo configuration
+   */
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: awsmobile.aws_appsync_graphqlEndpoint
+        httpEndpoint:
+          'https://eqn5ppojg5fglkdqoqfdfuy5am.appsync-api.us-west-2.amazonaws.com/graphql'
       }
-    }
+    },
+    errorHandler: '@/plugins/graphql-errorhandler'
   },
 
   fontawesome: {
@@ -154,7 +208,14 @@ export default {
       },
       {
         set: '@fortawesome/free-brands-svg-icons', // Brand icons
-        icons: ['faDev', 'faFacebookF', 'faTwitter', 'faInstagram', 'faYoutube', 'faGithub']
+        icons: [
+          'faDev',
+          'faFacebookF',
+          'faTwitter',
+          'faInstagram',
+          'faYoutube',
+          'faGithub'
+        ]
       }
     ]
   },
@@ -189,11 +250,9 @@ export default {
     interval: 50,
     crawler: false,
     // concurrency: 500,
-    fallback: '404.html',
+    fallback: true,
 
-    routes: resolveRoutes,
-    exclude: [
-      '/',
+    routes: [resolveRoutes, '/',
       '/login/',
       '/profile/',
       '/my-garage/',
@@ -205,8 +264,7 @@ export default {
       '/contact-us/',
       '/recall-news/',
       '/recall-search-result/',
-      '/recall-search-detailed/'
-    ]
+      '/recall-search-detailed/']
   },
 
   hooks: {

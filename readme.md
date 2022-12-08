@@ -1,6 +1,6 @@
 # nuxt-v2-motorsafety
 
-## Build Setup
+## Build  Setup
 
 ```bash
 # install dependencies
@@ -59,6 +59,7 @@ Login with credentials `dev@adaptiadesign.com/123456789`
 
 Goto `https://search-appsync-domain-5e3agacwt4cs5kdyqyzngnkaiu.us-west-2.es.amazonaws.com/_plugin/kibana/app/kibana#/dev_tools/console`
 Enter `DELETE dealers` to delete all data on dealers
+  
 
 ####3. Update `dealers-xlsx.js`
 - Update `AWS_CREDENTIALS_PROFILE` to your credential  

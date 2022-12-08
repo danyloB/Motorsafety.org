@@ -11,12 +11,18 @@
                 <div class="col-lg-8">
                   <LocateDealerIntro :dealer="dealer" />
                   <LocateDealerDetailedInfo :dealer="dealer" />
-                  <recall-map width="100%" height="500px" :dealers="[dealer]" :fit-markers="false" show-detail />
+                  <recall-map
+                    width="100%"
+                    height="500px"
+                    :dealers="[dealer]"
+                    :fit-markers="false"
+                    show-detail
+                  />
                 </div>
                 <div class="col-lg-4 right-sidebar">
                   <div class="subscribe-recall pt-4">
                     <div v-show="subscribeMessage" class="success-msg">
-                      <img src="../../../../assets/images/success.svg" alt=""> Thank you for
+                      <img src="../../../../assets/images/success.svg" alt /> Thank you for
                       subscribing to notifications
                     </div>
                     <div v-show="!subscribeMessage &&!user">
@@ -28,12 +34,9 @@
                           required
                           class="form-control"
                           placeholder="E.g. jamesdough@email.com"
-                        >
+                        />
                         <div class="input-group-append">
-                          <button
-                            class="btn btn-primary"
-                            type="submit"
-                          >
+                          <button class="btn btn-primary" type="submit">
                             Submit
                           </button>
                         </div>
@@ -43,9 +46,7 @@
                   <div class="container">
                     <div class="find-form">
                       <h2>Find Recalls</h2>
-                      <p>
-                        More than 1 in 4 vehicles on the road have an unrepaired call.
-                      </p>
+                      <p>More than 1 in 4 vehicles on the road have an unrepaired call.</p>
                       <client-only>
                         <HomeRecallForm :new-line-switch="true" />
                       </client-only>
@@ -83,7 +84,10 @@
                         and more!
                       </p>
                       <div class="btn-ctn">
-                        <nuxt-link class="btn-claim" :to="`/dealers/${dealer.city_state_slug}/${dealer.dealerSlug}/claim/`">
+                        <nuxt-link
+                          class="btn-claim"
+                          :to="`/dealers/${dealer.city_state_slug}/${dealer.dealerSlug}/claim/`"
+                        >
                           Claim your dealership
                         </nuxt-link>
                       </div>
@@ -184,7 +188,9 @@ export default {
     }
   },
   head () {
-    const title = this.dealer ? `${this.dealer.name}- ${this.dealer.city} - ${this.dealer.state} - Motorsafety.org` : 'Motorsafety.org'
+    const title = this.dealer
+      ? `${this.dealer.name}- ${this.dealer.city} - ${this.dealer.state} - Motorsafety.org`
+      : 'Motorsafety.org'
     const defaultDescription = this.dealer
       ? `Contact ${this.dealer.name}. Visit MotorSafety to find your nearest recall repair center or dealership in ${this.dealer.city}, ${this.dealer.state} today.`
       : 'MotorSafety.org'
@@ -192,10 +198,22 @@ export default {
       title,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'description', name: 'description', content: defaultDescription },
-        { hid: 'og:description', name: 'og:description', content: defaultDescription },
+        {
+          hid: 'description',
+          name: 'description',
+          content: defaultDescription
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: defaultDescription
+        },
         { hid: 'og:title', name: 'og:title', content: title },
-        { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: title }
+        {
+          hid: 'apple-mobile-web-app-title',
+          name: 'apple-mobile-web-app-title',
+          content: title
+        }
       ]
     }
   },
@@ -237,27 +255,27 @@ export default {
   padding-top: 80px;
 }
 .subscribe-recall {
-    display: flex;
-    justify-content: center;
-    padding: 0 16px;
-    flex-direction: column;
-  }
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+  flex-direction: column;
+}
 
-  .subscribe-recall h5 {
-    font-size: 14px;
-    opacity: 0.7;
-  }
+.subscribe-recall h5 {
+  font-size: 14px;
+  opacity: 0.7;
+}
 
-  .subscribe-recall .btn-primary {
+.subscribe-recall .btn-primary {
+  height: auto;
+}
+@media screen and (max-width: 767px) {
+  .subscribe-recall {
     height: auto;
+    padding: 15px;
+    margin-bottom: 15px;
   }
-  @media screen and (max-width: 767px) {
-    .subscribe-recall {
-      height: auto;
-      padding: 15px;
-      margin-bottom: 15px;
-    }
-  }
+}
 .claim-dealer {
   text-align: center;
   padding: 25px;

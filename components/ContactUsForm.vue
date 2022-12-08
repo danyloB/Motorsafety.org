@@ -60,8 +60,8 @@
   </b-form>
 </template>
 <script>
-import * as mutations from '@/graphql/mutations'
 import gpl from 'graphql-tag'
+import * as mutations from '@/graphql/mutations'
 import { uuidv4 } from '@/utils'
 export default {
   name: 'ContactUsForm',

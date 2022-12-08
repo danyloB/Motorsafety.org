@@ -1,68 +1,30 @@
 {
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-v2motorsafetyorg-amplify-dev-65124-authRole",
-      "UnauthRoleArn": "arn:aws:iam::463953249523:role/amplify-v2motorsafetyorg-amplify-dev-65124-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::463953249523:role/amplify-v2motorsafetyorg-amplify-dev-65124-authRole",
-      "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-v2motorsafetyorg-amplify-dev-65124-deployment",
-      "UnauthRoleName": "amplify-v2motorsafetyorg-amplify-dev-65124-unauthRole",
-      "StackName": "amplify-v2motorsafetyorg-amplify-dev-65124",
-      "StackId": "arn:aws:cloudformation:us-west-2:463953249523:stack/amplify-v2motorsafetyorg-amplify-dev-65124/b1998780-7022-11eb-bc88-063358fac729",
-      "AmplifyAppId": "d3r8ah4zq1ial1"
-    },
-    "categories": {
-      "auth": {
-        "userPoolGroups": {},
-        "V2MotorsafetyAuth": {}
-      },
-      "function": {
-        "GetNhtsaRecalls": {
-          "deploymentBucketName": "amplify-v2motorsafetyorg-amplify-dev-65124-deployment",
-          "s3Key": "amplify-builds/GetNhtsaRecalls-526843323975514e4d55-build.zip"
-        },
-        "RecallMasterApiCall": {
-          "deploymentBucketName": "amplify-v2motorsafetyorg-amplify-dev-65124-deployment",
-          "s3Key": "amplify-builds/RecallMasterApiCall-3656744a533371743748-build.zip"
-        },
-        "SaveAppointment": {
-          "deploymentBucketName": "amplify-v2motorsafetyorg-amplify-dev-65124-deployment",
-          "s3Key": "amplify-builds/SaveAppointment-3037526a714b6d744a4f-build.zip"
-        },
-        "NhtsaModelSync": {
-          "deploymentBucketName": "amplify-v2motorsafetyorg-amplify-dev-65124-deployment",
-          "s3Key": "amplify-builds/NhtsaModelSync-3554424b6d6c3844496d-build.zip"
-        },
-        "V2MotorsafetyAuthPreSignup": {
-          "deploymentBucketName": "amplify-v2motorsafetyorg-amplify-dev-65124-deployment",
-          "s3Key": "amplify-builds/V2MotorsafetyAuthPreSignup-62394771727641676759-build.zip"
-        }
-      }
-    }
-  },
   "develop": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-v2motorsafetyorg-amplify-develop-171527-authRole",
-      "UnauthRoleArn": "arn:aws:iam::463953249523:role/amplify-v2motorsafetyorg-amplify-develop-171527-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::463953249523:role/amplify-v2motorsafetyorg-amplify-develop-171527-authRole",
+      "AuthRoleName": "amplify-motorsafety-develop-201448-authRole",
+      "UnauthRoleArn": "arn:aws:iam::463953249523:role/amplify-motorsafety-develop-201448-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::463953249523:role/amplify-motorsafety-develop-201448-authRole",
       "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-v2motorsafetyorg-amplify-develop-171527-deployment",
-      "UnauthRoleName": "amplify-v2motorsafetyorg-amplify-develop-171527-unauthRole",
-      "StackName": "amplify-v2motorsafetyorg-amplify-develop-171527",
-      "StackId": "arn:aws:cloudformation:us-west-2:463953249523:stack/amplify-v2motorsafetyorg-amplify-develop-171527/40f6a4d0-63ad-11eb-a0e2-029323e94e8b",
-      "AmplifyAppId": "d3r8ah4zq1ial1"
+      "DeploymentBucketName": "amplify-motorsafety-develop-201448-deployment",
+      "UnauthRoleName": "amplify-motorsafety-develop-201448-unauthRole",
+      "StackName": "amplify-motorsafety-develop-201448",
+      "StackId": "arn:aws:cloudformation:us-west-2:463953249523:stack/amplify-motorsafety-develop-201448/df6bf290-3dd7-11ed-814e-0ab71625e5e7",
+      "AmplifyAppId": "d38u28gzocfn87"
     },
     "categories": {
       "auth": {
         "userPoolGroups": {},
-        "V2MotorsafetyAuth": {}
+        "motorsafetybdb75347bdb75347": {}
       },
       "function": {
-        "GetNhtsaRecalls": {},
-        "RecallMasterApiCall": {},
-        "SaveAppointment": {},
-        "NhtsaModelSync": {},
-        "V2MotorsafetyAuthPreSignup": {}
+        "nhtsaModelSync": {
+          "deploymentBucketName": "amplify-motorsafety-develop-201448-deployment",
+          "s3Key": "amplify-builds/nhtsaModelSync-34337a395673654c567a-build.zip"
+        },
+        "motorSafetyPreSignup": {
+          "deploymentBucketName": "amplify-motorsafety-develop-201448-deployment",
+          "s3Key": "amplify-builds/motorSafetyPreSignup-2b4f3961637475543552-build.zip"
+        }
       }
     }
   }

@@ -153,11 +153,11 @@
   </b-form>
 </template>
 <script>
-import api from '@/utils/requests'
 import { AuthState } from '@aws-amplify/ui-components'
 import { Hub } from '@aws-amplify/core'
 import gpl from 'graphql-tag'
 import { Auth } from 'aws-amplify'
+import api from '@/utils/requests'
 import * as queries from '@/graphql/queries'
 import makes from '@/utils/makes'
 import * as mutations from '@/graphql/mutations'

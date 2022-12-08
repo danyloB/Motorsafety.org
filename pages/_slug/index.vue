@@ -21,11 +21,18 @@
               <div class="col-12 col-md-8 col-lg-9 order-1 order-md-2">
                 <div class="news-details-text">
                   <h1 v-html="item.title"></h1>
-                  <cld-image v-if="item.cld_public_id" loading="lazy" cloud-name="motorsafety" :public-id="item.cld_public_id" class="recall-item-img">
+                  <cld-image
+                    v-if="item.cld_public_id"
+                    loading="lazy"
+                    cloud-name="motorsafety"
+                    :public-id="item.cld_public_id"
+                    class="recall-item-img"
+                  >
                     <cld-transformation width="768" fetchFormat="webp" crop="scale" />
                   </cld-image>
                   <div class="publish-status">
-                    <span>{{ status }}</span> {{ item.display_date }}
+                    <span>{{ status }}</span>
+                    {{ item.display_date }}
                   </div>
                   <div class="remote-description" v-html="item.description" />
                 </div>
@@ -45,8 +52,10 @@
 
         <section class="disclaimed">
           <div class="container">
-            MotorSafety.org obtains its information from public AND OTHER AVAILABLE RECORDS AND DOES NOT WARRANT THE ACCURACY
-            OF THE INFORMATION. IN THE EVENT OF AN INACCURACY, ALL RECOURSE, claims and inquiries SHALL BE ADDRESSED SOLELY TO
+            MotorSafety.org obtains its information from public AND OTHER AVAILABLE RECORDS AND DOES NOT WARRANT THE
+            ACCURACY
+            OF THE INFORMATION. IN THE EVENT OF AN INACCURACY, ALL RECOURSE, claims and inquiries SHALL BE ADDRESSED
+            SOLELY TO
             THE ORIGINAL SOURCE(S) OF SUCH INFORMATION.
           </div>
         </section>
@@ -61,8 +70,7 @@
         </section>
 
         <section class="check-recall-service border-top pt-5">
-          <div class="container">
-          </div>
+          <div class="container"></div>
         </section>
       </div>
     </div>
@@ -116,9 +124,7 @@ export default {
         '@id': this.item.link
       },
       headline: this.item.title,
-      image: [
-        (this.item.featured_image) || ''
-      ],
+      image: [this.item.featured_image || ''],
       datePublished: this.item.date,
       dateModified: this.item.modified,
       author: {
@@ -130,20 +136,30 @@ export default {
         name: 'MotorSafety.org',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://res.cloudinary.com/motorsafety/image/upload/v2-motorsafety/assets/images/logo'
+          url:
+            'https://res.cloudinary.com/motorsafety/image/upload/v2-motorsafety/assets/images/logo'
         }
       }
     }
   },
   head () {
     const title = this.item ? `${this.item.title} | MotorSafety.org` : ''
-    const defaultDescription = 'MotorSafety.org | Protecting Drivers Everywhere'
+    const defaultDescription =
+      'MotorSafety.org | Protecting Drivers Everywhere'
     const acf = this.item.acf
     const metaHeaders = {
       title: acf.meta_title || title,
       meta: [
-        { hid: 'description', name: 'description', content: acf.meta_description || defaultDescription },
-        { hid: 'og:description', name: 'og:description', content: acf.meta_description || defaultDescription }
+        {
+          hid: 'description',
+          name: 'description',
+          content: acf.meta_description || defaultDescription
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: acf.meta_description || defaultDescription
+        }
       ]
     }
     if (acf.meta_keywords) {
@@ -156,7 +172,9 @@ export default {
     if (acf.custom_schema) {
       try {
         const jsonSchema = JSON.parse(acf.custom_schema)
-        metaHeaders.script = [{ type: 'application/ld+json', json: jsonSchema }]
+        metaHeaders.script = [
+          { type: 'application/ld+json', json: jsonSchema }
+        ]
       } catch (err) {
         console.error(err)
       }
@@ -171,102 +189,101 @@ export default {
       return this.item.status
     }
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 
 <style scoped lang="scss">
-  .featured-image {
-    max-width: 100%;
-    height: auto;
+.featured-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.news-details-cnt {
+  margin: 100px 0 30px;
+}
+
+.disclaimed .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #dee2e6;
+}
+
+.news-details-text {
+  max-width: 680px;
+}
+
+.disclaimed .container {
+  padding-top: 20px;
+  border-top: 1px solid #dee2e6;
+}
+
+@media screen and (max-width: 767px) {
+  .news-details-cnt h1 {
+    font-size: 24px;
   }
 
   .news-details-cnt {
-    margin: 100px 0 30px;
+    margin: 25px 0;
+    padding-left: 7px;
+  }
+
+  .recall-by-brand {
+    padding: 30px 0 0;
+    margin: 30px 0 0;
+  }
+
+  .news-details-page .recall-by-brand .container {
+    background: #f2f2f2;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .news-details-cnt {
+    margin: 50px 0 30px;
   }
 
   .news-details-text h1 {
-    font-size: 48px;
+    font-size: 38px;
   }
 
-  .news-details-text {
-    max-width: 680px;
+  .recall-by-brand {
+    padding: 30px 0;
+    margin: 30px 0;
   }
+}
 
-  .disclaimed .container {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: 1px solid #dee2e6;
+.recall-form-container {
+  padding-top: 30px;
+}
+
+.recall-form-container > div {
+  padding-top: 10px;
+}
+
+.author-detail {
+  padding-top: 40px;
+  border-top: 1px solid #aaa;
+}
+
+.publish-status {
+  padding: 1rem 0;
+
+  span {
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-right: 20px;
   }
+}
 
-  @media screen and (max-width: 767px) {
+.author-info-container {
+  text-align: center;
 
-    .news-details-cnt h1 {
-      font-size: 24px;
-    }
-
-    .news-details-cnt {
-      margin: 25px 0;
-      padding-left: 7px;
-    }
-
-    .recall-by-brand {
-      padding: 30px 0 0;
-      margin: 30px 0 0;
-    }
-
-    .news-details-page .recall-by-brand .container {
-      background: #f2f2f2;
-      margin-bottom: 30px;
-    }
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-
-    .news-details-cnt {
-      margin: 50px 0 30px;
-    }
-
-    .news-details-text h1 {
-      font-size: 38px;
-    }
-
-    .recall-by-brand {
-      padding: 30px 0;
-      margin: 30px 0;
+  .avatar {
+    img {
+      border-radius: 50%;
     }
   }
-
-  .recall-form-container {
-    padding-top: 30px;
-  }
-
-  .recall-form-container>div {
-    padding-top: 10px;
-  }
-
-  .author-detail {
-    padding-top: 40px;
-    border-top: 1px solid #aaa;
-  }
-
-  .publish-status {
-    padding: 1rem 0;
-    span {
-      font-weight: 600;
-      font-size: 1.2rem;
-      padding-right: 20px;
-    }
-  }
-
-  .author-info-container {
-    text-align: center;
-
-    .avatar {
-      img {
-        border-radius: 50%;
-      }
-    }
-  }
+}
 </style>

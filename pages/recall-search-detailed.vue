@@ -197,13 +197,14 @@ export default {
             query: gpl(queries.searchByDistance),
             variables
           })
-
-        this.dealers = dealersResponse.data.searchByDistance.items.map((item) => {
-          item.addressDisplay = `${item.address} ${item.city}, ${item.state} ${item.zip} United States`
-          item.image_id = getImageId(item.brand)
-          item.phone = getPhoneNumber(item)
-          return item
-        })
+        if (dealersResponse.data && dealersResponse.data.searchByDistance) {
+          this.dealers = dealersResponse.data.searchByDistance.items.map((item) => {
+            item.addressDisplay = `${item.address} ${item.city}, ${item.state} ${item.zip} United States`
+            item.image_id = getImageId(item.brand)
+            item.phone = getPhoneNumber(item)
+            return item
+          })
+        }
       }
     },
 
@@ -292,7 +293,7 @@ export default {
             return item
           })
         } catch (e) {
-          console.error('An error occured fetching recalls...')
+          console.error('An error occured fetching recalls...', e)
         }
       }
     },
